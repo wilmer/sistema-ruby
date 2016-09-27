@@ -1,0 +1,12 @@
+<!--<p id="notice"><%= notice %></p>-->
+<div style="width:80%;margin:0 auto;">
+	<h2>Detalle de Categoría</h2>
+
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @category.nombre %>
+	</p>
+
+	<%= link_to 'Editar', edit_category_path(@category) %> |
+	<%= link_to 'Volver', categories_path %>
+</div>

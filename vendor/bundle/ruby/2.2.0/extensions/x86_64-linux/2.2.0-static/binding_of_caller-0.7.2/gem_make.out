@@ -1,0 +1,12 @@
+/usr/local/bin/ruby -r ./siteconf20160922-4024-129eylh.rb extconf.rb
+
+make "DESTDIR=" clean
+make: *** No hay ninguna regla para construir el objetivo «clean».  Alto.
+
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+make "DESTDIR=" install
+echo "Nada."
+Nada.
