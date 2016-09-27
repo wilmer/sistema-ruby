@@ -1,21 +1,18 @@
 <%= form_for(@material) do |f| %>
   <% if @material.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@material.errors.count, "error") %> prohibited this material from being saved:</h2>
-
-      <ul>
-      <% @material.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <h4>Debes completar todos los campos:</h4>
+    <% @material.errors.full_messages.each do |message| %>
+      <div class: "error white">
+        * <%= message %>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+    <%= f.label :nombre, "Nombre" %><br>
+    <%= f.text_field :nombre, class: "form-control", style: "width:250px" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
   </div>
 <% end %>
