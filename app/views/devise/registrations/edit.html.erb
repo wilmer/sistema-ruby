@@ -48,7 +48,7 @@
 
   <div class=field>
     <%= f.label :date_of_birth %><br />
-    <%= f.date_select :date_of_birth %>
+    <%= f.date_select :date_of_birth, start_year: 1980, end_year: 2016 %>
   </div>
 
   <div><%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "Femenino" %></div>

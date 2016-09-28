@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :materials
+  #resources :materials
   resources :products
   devise_for :users
   resources :categories
