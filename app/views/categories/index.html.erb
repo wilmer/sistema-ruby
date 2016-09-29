@@ -2,7 +2,7 @@
 <div style="width:80%;margin:0 auto;">
   <h1>Listando Categorías</h1>
 
-  <table>
+  <table class="table table-hover table-responsive text-center">
     <thead>
       <tr>
         <th>Nombre</th>
@@ -14,9 +14,9 @@
       <% @categories.each do |category| %>
         <tr>
           <td><%= category.nombre %></td>
-          <td><%= link_to 'Mostrar', category %></td>
-          <td><%= link_to 'Editar', edit_category_path(category) %></td>
-          <td><%= link_to 'Eliminar', category, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+          <td><%= link_to 'Mostrar', category, class:"btn btn-info" %></td>
+          <td><%= link_to 'Editar', edit_category_path(category), class:"btn btn-info" %></td>
+          <td><%= link_to 'Eliminar', category, method: :delete, data: { confirm: '¿Está seguro?' }, class:"btn btn-info" %></td>
         </tr>
       <% end %>
     </tbody>

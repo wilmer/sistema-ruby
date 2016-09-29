@@ -11,13 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927004624) do
+ActiveRecord::Schema.define(version: 20160928194738) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "nombre",     limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "products", force: :cascade do |t|
+    t.integer  "category_id",       limit: 4
+    t.string   "nombre",            limit: 255
+    t.string   "descripcion",       limit: 255
+    t.float    "stock",             limit: 24
+    t.float    "precio_compra",     limit: 24
+    t.float    "precio_venta",      limit: 24
+    t.date     "fecha_vencimiento"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
