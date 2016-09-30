@@ -1,39 +1,47 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
+<div style="width:80%;margin:0 auto;">
+  <h2>Detalle de Producto</h2>
+  <p>
+    <strong>Código:</strong>
+    <%= @product.id %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @product.category %>
-</p>
+  <p>
+    <strong>Categoría:</strong>
+    <%= @product.category ? @product.category.nombre : "Sin asignar" %>
+  </p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @product.nombre %>
-</p>
+  <p>
+    <strong>Nombre:</strong>
+    <%= @product.nombre %>
+  </p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @product.descripcion %>
-</p>
+  <p>
+    <strong>Descripción:</strong>
+    <%= @product.descripcion %>
+  </p>
 
-<p>
-  <strong>Stock:</strong>
-  <%= @product.stock %>
-</p>
+  <p>
+    <strong>Stock:</strong>
+    <%= @product.stock %>
+  </p>
 
-<p>
-  <strong>Precio compra:</strong>
-  <%= @product.precio_compra %>
-</p>
+  <p>
+    <strong>Precio de compra:</strong>
+    <%= @product.precio_compra %>
+  </p>
 
-<p>
-  <strong>Precio venta:</strong>
-  <%= @product.precio_venta %>
-</p>
+  <p>
+    <strong>Precio de venta:</strong>
+    <%= @product.precio_venta %>
+  </p>
 
-<p>
-  <strong>Fecha vencimiento:</strong>
-  <%= @product.fecha_vencimiento %>
-</p>
+  <p>
+    <strong>Fecha de vencimiento:</strong>
+    <%= @product.fecha_vencimiento.strftime("%d-%b-%Y") %>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  </p>
+
+  <%= link_to 'Editar', edit_product_path(@product) %> |
+  <%= link_to 'Volver', products_path %>
+</div>

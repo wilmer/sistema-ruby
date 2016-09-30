@@ -4,4 +4,5 @@ class Product < ActiveRecord::Base
   validates :descripcion, length: {maximum: 80, too_long: "demasiado larga"}
   validates :stock, :numericality => {:message => "debe ser un valor numérico"}
   validates_numericality_of :stock, :greater_than => 0, :message => "no puede ser negativo o cero"
+  validates :precio_compra, :numericality => {:message => "debe ser un valor numérico"}
 end

@@ -1,45 +1,42 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <% @product.errors.full_messages.each do |message| %>
+      <div class="error white">
+        * <%= message %>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
+    <%= f.label :category_id, "Categoría" %><br>
+    <%= collection_select( :product, :category_id, Category.all, :id, :nombre, { :multiple => false }, { :class => "form-control", :style => "width:300px" } ) %>
   </div>
   <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+    <%= f.label :nombre, "Nombre" %><br>
+    <%= f.text_field :nombre, class: "form-control", style: "width:300px" %>
   </div>
   <div class="field">
-    <%= f.label :descripcion %><br>
-    <%= f.text_field :descripcion %>
+    <%= f.label :descripcion, "Descripción" %><br>
+    <%= f.text_field :descripcion, class: "form-control", style: "width:300px" %>
   </div>
   <div class="field">
-    <%= f.label :stock %><br>
-    <%= f.text_field :stock %>
+    <%= f.label :stock, "Stock" %><br>
+    <%= f.text_field :stock, class: "form-control", style: "width:300px" %>
   </div>
   <div class="field">
-    <%= f.label :precio_compra %><br>
-    <%= f.text_field :precio_compra %>
+    <%= f.label :precio_compra, "Precio de compra" %><br>
+    <%= f.text_field :precio_compra, class: "form-control", style: "width:300px" %>
   </div>
   <div class="field">
-    <%= f.label :precio_venta %><br>
-    <%= f.text_field :precio_venta %>
+    <%= f.label :precio_venta, "Precio de venta" %><br>
+    <%= f.text_field :precio_venta, class: "form-control", style: "width:300px" %>
   </div>
   <div class="field">
-    <%= f.label :fecha_vencimiento %><br>
-    <%= f.date_select :fecha_vencimiento %>
+    <%= f.label :fecha_vencimiento, "Fecha de vencimiento" %><br>
+    <%= f.date_select :fecha_vencimiento, start_year: 2017, end_year: 2026, class: "form-control" %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar", class: "btn btn-info" %>
   </div>
 <% end %>
