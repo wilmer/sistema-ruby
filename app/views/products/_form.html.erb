@@ -36,6 +36,11 @@
     <%= f.date_select :fecha_vencimiento, start_year: 2017, end_year: 2026, class: "form-control" %>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar, "Imagen" %><br>
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Guardar", class: "btn btn-info" %>
   </div>

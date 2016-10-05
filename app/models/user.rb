@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   #validates :is_female, presence: true
-  validates :is_female, :presence => {:message => "no puede estar en blanco"}
 end

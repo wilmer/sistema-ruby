@@ -1,47 +1,44 @@
 <!--<p id="notice"><%= notice %></p>-->
 <div style="width:80%;margin:0 auto;">
   <h2>Detalle de Producto</h2>
-  <p>
-    <strong>Código:</strong>
-    <%= @product.id %>
-  </p>
+  
+  <div class="table responsive">
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th class="text-center">Id</th>
+          <th class="text-center">Categoría</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Descripción</th>
+          <th class="text-center">Stock</th>
+          <th class="text-center">Precio de compra</th>
+          <th class="text-center">Precio de venta</th>
+          <th class="text-center">Fecha de vencimiento</th>
+          <th class="text-center">Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @product.id %></td>
+          <td><%= @product.category ? @product.category.nombre: "Sin asignar" %></td>
+          <td><%= @product.nombre %></td>
+          <td><%= @product.descripcion %></td>
+          <td><%= @product.stock %></td>
+          <td><%= @product.precio_compra %></td>
+          <td><%= @product.precio_venta %></td>
+          <td><%= @product.fecha_vencimiento.strftime("%d-%b-%Y") %></td>
+          <td><%= image_tag @product.avatar.url(:thumb) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <p>
-    <strong>Categoría:</strong>
-    <%= @product.category ? @product.category.nombre : "Sin asignar" %>
-  </p>
-
-  <p>
-    <strong>Nombre:</strong>
-    <%= @product.nombre %>
-  </p>
-
-  <p>
-    <strong>Descripción:</strong>
-    <%= @product.descripcion %>
-  </p>
-
-  <p>
-    <strong>Stock:</strong>
-    <%= @product.stock %>
-  </p>
-
-  <p>
-    <strong>Precio de compra:</strong>
-    <%= @product.precio_compra %>
-  </p>
-
-  <p>
-    <strong>Precio de venta:</strong>
-    <%= @product.precio_venta %>
-  </p>
-
-  <p>
-    <strong>Fecha de vencimiento:</strong>
-    <%= @product.fecha_vencimiento.strftime("%d-%b-%Y") %>
-
-  </p>
+  <br>
 
   <%= link_to 'Editar', edit_product_path(@product) %> |
   <%= link_to 'Volver', products_path %>
+
 </div>
+
+
+

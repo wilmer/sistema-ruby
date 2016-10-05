@@ -40,7 +40,8 @@
 
     <div class="form-group">
       <%= f.label :date_of_birth, "Fecha de nacimiento" %><br />
-      <%= f.date_select :date_of_birth, start_year: 1980, end_year: 2010 %>
+      <%= f.date_field :date_of_birth, start_year: 1980, end_year: 2010, class: "form-control" %>
+      <!-- f.date_select -->
     </div>
 
     <div class="form-group">
