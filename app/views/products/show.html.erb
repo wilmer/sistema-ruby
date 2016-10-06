@@ -1,8 +1,8 @@
 <!--<p id="notice"><%= notice %></p>-->
 <div style="width:80%;margin:0 auto;">
-  <h2>Detalle de Producto</h2>
+  <h1>Detalle de Producto</h1>
   
-  <div class="table responsive">
+  <div class="table-responsive">
     <table class="table table-hover text-center">
       <thead>
         <tr>
@@ -15,6 +15,8 @@
           <th class="text-center">Precio de venta</th>
           <th class="text-center">Fecha de vencimiento</th>
           <th class="text-center">Imagen</th>
+          <th class="text-center">Creado</th>
+          <th class="text-center">Última vez editado</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +30,8 @@
           <td><%= @product.precio_venta %></td>
           <td><%= @product.fecha_vencimiento.strftime("%d-%b-%Y") %></td>
           <td><%= image_tag @product.avatar.url(:thumb) %></td>
+          <td><%= @product.created_at.strftime("%d-%b-%Y") %></td>
+          <td><%= @product.updated_at.strftime("%d-%b-%Y") %></td>
         </tr>
       </tbody>
     </table>

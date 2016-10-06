@@ -6,6 +6,7 @@
     <table class="table table-hover text-center">
       <thead>
         <tr>
+          <th class="text-center">Id</th>
           <th class="text-center">Categoría</th>
           <th class="text-center">Nombre</th>
           <th class="text-center">Descripción</th>
@@ -20,6 +21,7 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
+            <td><%= product.id %></td>
             <td><%= product.category ? product.category.nombre: 'Sin asignar' %></td>
             <td><%= product.nombre %></td>
             <td><%= product.descripcion %></td>
